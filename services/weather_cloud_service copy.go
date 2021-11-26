@@ -12,6 +12,6 @@ func NewWeatherCloudService() *WeatherCloudService {
 }
 
 func (WeatherCloudService) CreateRecords() (int64, error) {
-	result := conexion.DBCon.CreateInBatches(etl.WeatherCloudSlice, 5000)
+	result := conexion.DBCon.CreateInBatches(etl.WeatherCloudSlice, 1000)
 	return result.RowsAffected, result.Error
 }

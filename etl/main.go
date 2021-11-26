@@ -1,6 +1,7 @@
 package etl
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/Edilberto-Vazquez/weathercloud-etl-process/db/models"
@@ -20,6 +21,7 @@ type Log struct {
 func Worker(id int, jobs <-chan string, results chan<- []*models.ElectricField, processType string) {
 	for job := range jobs {
 		record, _ := ProcessElectricFieldMonitorFile(job)
+		fmt.Println(job)
 		results <- record
 	}
 }
