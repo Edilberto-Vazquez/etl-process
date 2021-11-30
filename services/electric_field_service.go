@@ -12,6 +12,6 @@ func NewElectricFieldService() *ElectricFieldService {
 }
 
 func (ElectricFieldService) CreateRecords() (int64, error) {
-	result := conexion.DBCon.CreateInBatches(etl.ElectricFieldSlice, 5000)
+	result := conexion.DBCon.CreateInBatches(etl.ElectricFieldSlice, 1000)
 	return result.RowsAffected, result.Error
 }

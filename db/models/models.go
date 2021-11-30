@@ -21,10 +21,10 @@ type WeatherCloud struct {
 	gorm.Model
 	TimeStamp time.Time       `gorm:"<-:create;not null"`
 	TempIn    sql.NullFloat64 `gorm:"<-:create"`
+	Temp      sql.NullFloat64 `gorm:"<-:create"`
+	Chill     sql.NullFloat64 `gorm:"<-:create"`
 	DewIn     sql.NullFloat64 `gorm:"<-:create"`
 	Dew       sql.NullFloat64 `gorm:"<-:create"`
-	Chill     sql.NullFloat64 `gorm:"<-:create"`
-	Temp      sql.NullFloat64 `gorm:"<-:create"`
 	HeatIn    sql.NullFloat64 `gorm:"<-:create"`
 	Heat      sql.NullFloat64 `gorm:"<-:create"`
 	Humin     sql.NullFloat64 `gorm:"<-:create"`
